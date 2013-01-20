@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Assignment 3 Experiements</title>
+		<script>
+			function CS_Class() {
+				this.subject = "Computer Science";
+			};
+			function CSE594() {
+				this.name = "Topics in Computer Science";
+			};
+			CSE594.prototype = new CS_Class();  // This is making CSE594 a 'child class' of CS_Class.
+			CS_Class.prototype.cheer = "WooooHooo!"; // This is giving CS_Class a new propety 'cheer' which in turn also lets CSE594 use it
+		</script>
+	</head>
+	<body>
+		<div id="myPlaceHolder"> </div>
+		
+		<script>
+			var myClass = new CSE594();
+			document.getElementById('myPlaceHolder').innerHTML='<p>I inherited my subject \"' + myClass.subject + '\" from my parent class declaration</p>';
+			console.log(myClass.cheer);
+		</script>
+	</body>
+</html>
